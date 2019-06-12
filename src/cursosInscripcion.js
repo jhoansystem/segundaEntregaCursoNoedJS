@@ -26,11 +26,11 @@ const crear =(cursoEstudiante) => {
 	{
 		listaCursoEstudiantes.push(nuevoCurso);
 		guardar();
-		return '<script>alert("Inscripción exitosa")</script>';
+		return '<script>alert("Inscripción exitosa");window.location="cursoInscripcion"</script>';
 	}
 	else
 	{
-		return '<script>alert("Ya se inscribío en este curso dos veces")</script>';
+		return '<script>alert("Ya se inscribío en este curso dos veces");window.location="cursoInscripcion"</script>';
 	}
 }
 const guardar =() => {
@@ -159,7 +159,7 @@ const eliminarInscripcion=(documento,idCurso)=>{
 
 	listaCursoEstudiantes.forEach(estudianteInscripcion =>{
 			
-			if(estudianteInscripcion.documento!=documento & estudianteInscripcion.idCurso!=idCurso)
+			if(estudianteInscripcion.documento!=documento || estudianteInscripcion.idCurso!=idCurso)
 			{
 				listaCursoEstudiantes2.push(estudianteInscripcion)
 			}
